@@ -1,13 +1,13 @@
 ---
 title: "host hugo site on github"
 date: 2022-03-19T08:30:00+07:00
-lastmod: 2022-03-20T05:46:00+0700
+lastmod: 2022-03-20T05:52:00+0700
 author: viridi
 draft: false
 tags: ['hugo', 'github', 'host']
 url: "0002"
 ---
-Proses deploy situs yang dibuat dengan Hugo sebagai suatu proyek GitHub Pages dapat dilakukan secara otomatis dengan GitHub Action Workflow [[1](#r01)]. Dapat pula dilakukan secara manual dengan selalu memperbarui berkas-berkas pada folder `public` dan mengaturnya pada setting GitHub Pages atau melakukan otomatisasi semuanya [[2](#r02)]. Dapat juga dilakukan dengan bantuan Bash script untuk memperbarui, akan tetapi hasilnya agar dapat dilihat perlu dilakukan clone, instal Hugo, dan dibaca secara lokal [[3](#r03)]. Terdapat pula cara membuat branch `gh-pages` yang merupakan orphan branch [[4](#r04)]. Di sini hanya akan dibahas bagaimana berkas-berkas yang dihasilkan Hugo dan kode dengan artikel disimpan dalam repo terpisah di GitHub [[2](#r02)] sebagai alternatif dari disimpan dalam repo yang sama akan tetapi pada cabang berbeda [[1](#r01)].
+Proses deploy situs yang dibuat dengan Hugo sebagai suatu proyek GitHub Pages dapat dilakukan secara otomatis dengan GitHub Action Workflow [[1](#r01)]. Dapat pula dilakukan secara manual dengan selalu memperbarui berkas-berkas pada folder `public` dan mengaturnya pada setting GitHub Pages atau melakukan otomatisasi sepenuhnya [[2](#r02)]. Dapat juga dilakukan dengan bantuan Bash script untuk memperbarui, akan tetapi hasilnya agar dapat dilihat perlu dilakukan clone repo suatu blog, instal Hugo, dan isi blog dibaca secara lokal [[3](#r03)]. Terdapat pula cara membuat branch `gh-pages` yang merupakan orphan branch [[4](#r04)]. Di sini hanya akan dibahas bagaimana berkas-berkas yang dihasilkan Hugo dan kode dengan artikel disimpan dalam repo terpisah di GitHub [[2](#r02)] sebagai alternatif dari disimpan dalam repo yang sama akan tetapi pada cabang berbeda [[1](#r01)].
 
 
 ## extended version
