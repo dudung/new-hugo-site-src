@@ -1,7 +1,7 @@
 ---
 title: "host hugo site on github"
 date: 2022-03-19T08:30:00+07:00
-lastmod: 2022-03-19T21:33:00+0700
+lastmod: 2022-03-19T22:09:00+0700
 author: viridi
 draft: false
 tags: ['hugo', 'github', 'host']
@@ -461,6 +461,12 @@ branch 'master' set up to track 'origin/master'.
 ```
 
 Sekarang telah terdapat repo untuk menyimpan isi (post) dan kode-kode untuk membuat situs dengan Hugo.
+
+## github action
+Langkah terakhir adalah membangun suatu GitHub Action. Hal ini dapat dilakkan dengan mengakses <https://github.com/dudung/new-hugo-site-src/actions/new> dan pilih **set up a workflow yourself**. Dan ganti isi berkas 'main.yml' dengan 'hugo CI' [[2](#r02)]. Klik tombol **Start commit** dan lalu **Commit new file**. Berkas `./github/workflows/main.yml` telah berhasil dibuat.
+
+### push something
+Tulisan ini telah diubah sambil proses yang didokumentasikan dilakukan. Dicoba apakah update `new-hugo-site-src` akan menjalankan GitHub Action yang telah dibuat.
 
 
 ## notes
