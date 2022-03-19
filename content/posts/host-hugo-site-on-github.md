@@ -1,7 +1,7 @@
 ---
 title: "host hugo site on github"
 date: 2022-03-19T08:30:00+07:00
-lastmod: 2022-03-20T05:52:00+0700
+lastmod: 2022-03-20T06:13:00+0700
 author: viridi
 draft: false
 tags: ['hugo', 'github', 'host']
@@ -486,7 +486,7 @@ $ git commit -m "A commit message"
 $ git push
 ```
 
-Ketiga langkah di atas dapat dibuat semi-otomatis dengan skrip Bash [[3](#r03)] atau otomatis sepenuhnya dengan GitHub Action Workflow [[1](#r01), [1](#r01)]. Pada pendekatan pertama langkah 2 dan 3 dipermudah dengan bantuan suatu skrip Bash setelah langkah 1 dijalankan, sedangkan pada pendekatan kedua langkah 2 dan 3 dilakukan secata otomatis setelah langkah pertama dilakukan karena GitHub Action Workflow akan terpicu secara otomatis saat suatu proses push terjadi.
+Ketiga langkah di atas dapat dibuat semi-otomatis dengan skrip Bash [[3](#r03)] atau otomatis sepenuhnya dengan GitHub Action Workflow [[1](#r01), [2](#r02)]. Pada pendekatan pertama langkah 2 dan 3 dipermudah dengan bantuan suatu skrip Bash setelah langkah 1 dijalankan, sedangkan pada pendekatan kedua langkah 2 dan 3 dilakukan secata otomatis setelah langkah pertama dilakukan karena GitHub Action Workflow akan terpicu secara otomatis saat suatu proses push terjadi.
 
 
 ## notes
