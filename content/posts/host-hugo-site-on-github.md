@@ -489,6 +489,8 @@ seperti di [[5](#r05)]. Sayangnya masih belum berhasil juga dan
 adalah pesan kesalahan yang diperoleh.
 
 
+external_repository: dudung/new-hugo-site
+
 ## notes
 1. <a name='r01'></a>"Host on GitHub", Hugo, 2 Feb 2022, url <https://gohugo.io/hosting-and-deployment/hosting-on-github/> [20220319].
 2. <a name='r02'></a>Carlos Pons, "Create and host a blog with Hugo and GitHub Pages in less than 30 minutes", my tech rahmblings, 21 Jun 2020, url <https://www.mytechramblings.com/posts/create-a-website-with-hugo-and-gh/> [20220319].
