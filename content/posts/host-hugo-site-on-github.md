@@ -1,7 +1,7 @@
 ---
 title: "host hugo site on github"
 date: 2022-03-19T08:30:00+07:00
-lastmod: 2022-03-19T22:09:00+0700
+lastmod: 2022-03-19T22:20:00+0700
 author: viridi
 draft: false
 tags: ['hugo', 'github', 'host']
@@ -468,9 +468,24 @@ Langkah terakhir adalah membangun suatu GitHub Action. Hal ini dapat dilakkan de
 ### push something
 Tulisan ini telah diubah sambil proses yang didokumentasikan dilakukan. Dicoba apakah update `new-hugo-site-src` akan menjalankan GitHub Action yang telah dibuat.
 
+Masih gagal dan coba ganti
+
+```
+secrets.GITHUB_TOKEN
+```
+
+dengan
+
+```
+secrets.ACTIONS_DEPLOY_KEY
+```
+
+seperti di [[5](#r05)].
+
 
 ## notes
 1. <a name='r01'></a>"Host on GitHub", Hugo, 2 Feb 2022, url <https://gohugo.io/hosting-and-deployment/hosting-on-github/> [20220319].
 2. <a name='r02'></a>Carlos Pons, "Create and host a blog with Hugo and GitHub Pages in less than 30 minutes", my tech rahmblings, 21 Jun 2020, url <https://www.mytechramblings.com/posts/create-a-website-with-hugo-and-gh/> [20220319].
 3. <a name='r03'></a>Ahmad Muhardian, "Cara Hosting/Deploy Hugo di Github", Petani Kode, 13 Mar 2022, url <https://www.petanikode.com/hugo-hosting-github/> [20220319].
 4. <a name='r04'></a>Jia Fu Low, "Create gh-pages branch in existing repo", Github, 9 Jul 2020, url <https://jiafulow.github.io/blog/2020/07/09/create-gh-pages-branch-in-existing-repo/> [20220319].
+5. <a name='r05'></a>Andrej Friesen, "gh-pages.yml", GitHub, 10 May 2021, url <https://github.com/ajfriesen/ajfriesen.com/blob/bc85030fc8307928efdfef0716bd94907254f7d1/.github/workflows/gh-pages.yml> [20220319].
