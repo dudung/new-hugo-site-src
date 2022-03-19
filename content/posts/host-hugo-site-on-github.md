@@ -1,7 +1,7 @@
 ---
 title: "host hugo site on github"
 date: 2022-03-19T08:30:00+07:00
-lastmod: 2022-03-19T22:20:00+0700
+lastmod: 2022-03-19T22:50:00+0700
 author: viridi
 draft: false
 tags: ['hugo', 'github', 'host']
@@ -480,7 +480,12 @@ dengan
 secrets.ACTIONS_DEPLOY_KEY
 ```
 
-seperti di [[5](#r05)].
+seperti di [[5](#r05)]. Sayangnya masih belum berhasil juga dan 
+
+```
+```
+
+adalah pesan kesalahan yang diperoleh.
 
 
 ## notes
