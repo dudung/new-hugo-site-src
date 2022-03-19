@@ -1,0 +1,10 @@
+baseURL = 'https://dudung.github.io/new-hugo-site/'
+languageCode = 'en-us'
+title = 'new hugo site'
+theme = 'ananke'
+
+[frontmatter]
+date = ['lastmod', 'publishDate', 'date']
+
+[params]
+date_format = "Mon, 02 Jan 2006"
