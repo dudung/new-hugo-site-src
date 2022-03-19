@@ -1,13 +1,13 @@
 ---
 title: "host hugo site on github"
 date: 2022-03-19T08:30:00+07:00
-lastmod: 2022-03-19T22:50:00+0700
+lastmod: 2022-03-20T05:43:00+0700
 author: viridi
 draft: false
 tags: ['hugo', 'github', 'host']
 url: "0002"
 ---
-Proses deploy situs yang dibuat dengan Hugo sebagai suatu proyek GitHub Pages dapat dilakukan secara otomatis dengan GitHub Action Workflow [[1](#r01)]. Dapat pula dilakukan secara manual dengan selalu memperbarui berkas-berkas pada folder `public` dan mengaturnya pada setting GitHub Pages atau melakukan otomatisasi semuanya [[2](#r02)]. Dapat juga dilakukan dengan bantuan Bash script untuk memperbarui, akan tetapi hasilnya agar dapat dilihat perlu dilakukan clone, instal Hugo, dan dibaca secara lokal [[3](#r03)]. Terdapat pula cara membuat branch `gh-pages` yang merupakan orphan branch [[4](#r04)]. Proses host situs yang dibuat dengan Hugo di GitHub tidak terlalu jelas, terutama saat melakukan proses build untuk branch `gh-pages` [[1](#r01)] dan juga telah dicoba bila branch `gh-pages` merupakan orphan branch [[4](#r04)], yang sayangnya keduanya tetap tidak berhasil. Antara tidak terjadi proses build dan deploy atau terjadi tetapi tidak ada halaman yang muncul.
+Proses deploy situs yang dibuat dengan Hugo sebagai suatu proyek GitHub Pages dapat dilakukan secara otomatis dengan GitHub Action Workflow [[1](#r01)]. Dapat pula dilakukan secara manual dengan selalu memperbarui berkas-berkas pada folder `public` dan mengaturnya pada setting GitHub Pages atau melakukan otomatisasi semuanya [[2](#r02)]. Dapat juga dilakukan dengan bantuan Bash script untuk memperbarui, akan tetapi hasilnya agar dapat dilihat perlu dilakukan clone, instal Hugo, dan dibaca secara lokal [[3](#r03)]. Terdapat pula cara membuat branch `gh-pages` yang merupakan orphan branch [[4](#r04)]. Di sini hanya akan dibahas bagaimana berkas-berkas yang dihasilkan Hugo dan kode dengan artikel disimpan dalam repo terpisah di GitHub [[2](#r02)] sebagai alternatif dari disimpan dalam repo yang sama akan tetapi pada cabang berbeda [[1](#r01)].
 
 
 ## extended version
@@ -164,7 +164,7 @@ L:\HOME\NEW-HUGO-SITE\PUBLIC
 dalam folder `public`.
 
 
-## push public and github pages
+## push public folder and github pages
 Berkas-berkas yang terdapat pada folder `public` akan diunggah ke suatu repo di GitHub dengan fitur GitHub Pages aktif sehingga sekaligus melakukan proses hosting.
 
 Sebelumnya perlu dibuat dulu repo `new-hugo-site` melalui <https://github.com/new>. Tidak perlu diisi berkas apapun.
@@ -460,36 +460,34 @@ To https://github.com/dudung/new-hugo-site-src.git
 branch 'master' set up to track 'origin/master'.
 ```
 
-Sekarang telah terdapat repo untuk menyimpan isi (post) dan kode-kode untuk membuat situs dengan Hugo.
+Sekarang telah terdapat repo untuk menyimpan artikel (post) dan kode-kode (md, html, css, js, toml) untuk membuat situs dengan Hugo.
 
-## github action
-Langkah terakhir adalah membangun suatu GitHub Action. Hal ini dapat dilakkan dengan mengakses <https://github.com/dudung/new-hugo-site-src/actions/new> dan pilih **set up a workflow yourself**. Dan ganti isi berkas 'main.yml' dengan 'hugo CI' [[2](#r02)]. Klik tombol **Start commit** dan lalu **Commit new file**. Berkas `./github/workflows/main.yml` telah berhasil dibuat.
 
-### push something
-Tulisan ini telah diubah sambil proses yang didokumentasikan dilakukan. Dicoba apakah update `new-hugo-site-src` akan menjalankan GitHub Action yang telah dibuat.
+## update post
+Langkah-langkah agar suatu artikel (post) dapat diperbarui adalah sebagai berikut ini.
 
-Masih gagal dan coba ganti
-
+1. Buat artikel baru atau ubah artikel yang telah ada. Simpan secara lokal dalam folder 'content' dan push ke repo kode, yang dalam hal ini adalah `new-hugo-site-src`.
 ```
-secrets.GITHUB_TOKEN
+MINGW64 /l/home/new-hugo-site (master)
+$ git add content/posts/some-post.md
+$ git commit -m "A commit message"
+$ git push
+```
+2. Lakukan proses build
+```
+MINGW64 /l/home/new-hugo-site (master)
+$ hugo
+```
+3. Navigas ke folder 'public' dan push isinya ke repo dengan fitur GitHub Pages telah aktif, yang dalam hal ini adalah `new-hugo-site`
+```
+$ cd public
+$ git add .
+$ git commit -m "A commit message"
+$ git push
 ```
 
-dengan
+Ketiga langkah di atas dapat dibuat semi-otomatis dengan skrip Bash [[3](#r03)] atau otomatis sepenuhnya dengan GitHub Action Workflow [[1](#r01), [1](#r01)]. Pada pendekatan pertama langkah 2 dan 3 dipermudah dengan bantuan suatu skrip Bash setelah langkah 1 dijalankan, sedangkan pada pendekatan kedua langkah 2 dan 3 dilakukan secata otomatis setelah langkah pertama dilakukan karena GitHub Action Workflow akan terpicu secara otomatis saat suatu proses push terjadi.
 
-```
-secrets.ACTIONS_DEPLOY_KEY
-```
-
-seperti di [[5](#r05)]. Sayangnya masih belum berhasil juga dan 
-
-```
- Error: Action failed with "not found deploy key or tokens"
-```
-
-adalah pesan kesalahan yang diperoleh.
-
-
-external_repository: dudung/new-hugo-site
 
 ## notes
 1. <a name='r01'></a>"Host on GitHub", Hugo, 2 Feb 2022, url <https://gohugo.io/hosting-and-deployment/hosting-on-github/> [20220319].
