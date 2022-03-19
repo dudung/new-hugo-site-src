@@ -1,7 +1,7 @@
 ---
 title: "host hugo site on github"
 date: 2022-03-19T08:30:00+07:00
-lastmod: 2022-03-20T05:43:00+0700
+lastmod: 2022-03-20T05:46:00+0700
 author: viridi
 draft: false
 tags: ['hugo', 'github', 'host']
