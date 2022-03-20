@@ -12,10 +12,6 @@ copyright = "© {year}"
 # Add your Google Analytics identifier: UA-XXXXXXXX-X
 # googleAnalytics = "" 
 
-[frontmatter]
-  date = ['lastmod', 'publishDate', 'date']
-
-
 # Optional params
 [params]
   # Follow the Hugo date/time format reference here: 
@@ -62,10 +58,13 @@ copyright = "© {year}"
   identifier = "about"
   name = "about"
   title = "About"
-  url = "/posts"
+  url = "/"
 
 [[menu.main]]
   identifier = "blog"
   name = "blog"
   title = "Blog"
   url = "/blog"
+
+
+
